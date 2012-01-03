@@ -1,0 +1,46 @@
+	public pointcut postCommand(Command c):
+	public pointcut getMediaName( ) : 
+	public pointcut getAlbumName( ) : 
+	public pointcut showImage( String imageName ):
+	public pointcut editLabel():call(IImageData br.unicamp.ic.sed.mobilemedia.photo.spec.req.IFilesystem.getImageInfo(String))
+	public pointcut updateImage():
+	public pointcut addNewPhotoToAlbum():
+	public pointcut callShowImage():
+	public pointcut deleteImage():
+	public pointcut constructingPhotoViewScreen(br.unicamp.ic.sed.mobilemedia.photo.impl.PhotoViewScreen photoViewScreen):
+	public pointcut getImages(String recordName):
+	public pointcut setCurrentStoreName(String storeName):
+	public pointcut handleCommandException() : 
+	public pointcut showImageListException() : (execution(protected void br.unicamp.ic.sed.mobilemedia.photo.impl.PhotoListController.showImageList(String )));
+	public pointcut initMenu(br.unicamp.ic.sed.mobilemedia.photo.impl.PhotoListScreen photoListScreen):
+	public pointcut addCommand( String command , int commandType , int posi ):
+	public pointcut exceptionsInGetImage() : execution( protected IImageData br.unicamp.ic.sed.mobilemedia.sorting.aspects.FilesystemMgrSorting.getImage(String, String));
+	public pointcut getImage() : 
+	public pointcut increaseNumberOfViews() : execution( 
+	public pointcut getNumberOfViews() : call( protected int br.unicamp.ic.sed.mobilemedia.sorting.aspects.FilesystemMgrSorting.getNumberOfViews( String, int, int ));
+	public pointcut getImageInfo():
+	public pointcut addImageData( String imageName , IImageData imageData, String albumName ):
+	public pointcut getImages() : call(IImageData[] br.unicamp.ic.sed.mobilemedia.favourites.spec.req.IFilesystem.getImages(String))
+	public pointcut updateImageInfo() : call(boolean br.unicamp.ic.sed.mobilemedia.favourites.spec.req.IFilesystem.updateImageInfo(IImageData , IImageData ))
+	public pointcut setButtons( Form display ) : 
+	public pointcut handleCommand( Command c ) : 
+	public pointcut play( String albumName, String musicName ) :
+	public pointcut playMusic() : execution( public void MusicController.playMusic(String,String));
+	pointcut openConnection() : call( public static Connection javax.microedition.io.Connector.open(String) )
+	pointcut sendMessage() : call( public void MessageConnection.send( Message) )
+	public pointcut exceptionsInSendImage() : openConnection() || sendMessage();
+	public pointcut exceptionsInReceiveImage() : call( public static Connection javax.microedition.io.Connector.open(String) )
+	public pointcut closeConnections() : call( public void javax.microedition.io.Connection.close() )
+	public pointcut getImageInfoToSend(): call(public IImageData IFilesystem.getImageInfo(String));
+	public pointcut loadImage() : 
+	public pointcut addImage() :
+	public pointcut getAlbumNames(): 
+	public pointcut getImages(): 
+	public pointcut resetImageData(): 
+	public pointcut getBytesFromImageInfo(IImageData ii):
+	public pointcut updateCounter(String albumName, String imageName):
+	public pointcut readImageAsByteArray(String imageFile):
+	public pointcut getImageInfoFromBytes(): 
+	public pointcut getBytesFromImageInfo(): 
+	public pointcut createImageData(int foreignRecordId, String parentAlbumName,String imageLabel , byte[] bytes, int endIndex ):
+	public pointcut handleCommand( ) : 

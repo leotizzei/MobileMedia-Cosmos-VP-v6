@@ -1,0 +1,39 @@
+public abstract aspect ExceptionAdapter {
+	public abstract pointcut handleException(  );
+public abstract aspect FilesystemMgrSorting {
+	public abstract pointcut getBytesFromImageInfo(IImageData ii);
+	public abstract pointcut createImageData(int foreignRecordId, String parentAlbumName,String imageLabel , byte[] bytes , int endIndex  );
+	public abstract pointcut updateCounter(String albumName, String imageName);
+public abstract aspect PhotoSorting {
+	//public abstract pointcut initPhotoListScreen(String[] imageNames, PhotoListScreen screen);
+	public abstract pointcut initMenu(javax.microedition.lcdui.List photoListScreen);
+	public abstract pointcut postCommand(Command c);
+	abstract public pointcut setCurrentStoreName(String storeName);
+	public abstract pointcut getImages(String recordName);
+public abstract aspect CopyPhoto_Photo {
+	abstract public pointcut showImage(String name);
+	abstract public pointcut postCommand(Command c);
+	abstract public pointcut addCopyCommand(javax.microedition.lcdui.Displayable photoViewScreen);
+public abstract aspect FilesystemMgrFavourites {
+	public abstract pointcut getBytesFromImageInfo(IImageData ii);
+	public abstract pointcut createImageData(int foreignRecordId, String parentAlbumName,String imageLabel , byte[] bytes , int endIndex  );
+public abstract aspect PhotoFavourites {
+	//public abstract pointcut initPhotoListScreen(String[] imageNames, PhotoListScreen screen);
+	public abstract pointcut initMenu(javax.microedition.lcdui.List photoListScreen);
+	public abstract pointcut postCommand( Command c , String imageName );
+	public abstract pointcut getImages(String recordName );
+	abstract public pointcut setCurrentStoreName(String storeName);
+public abstract aspect Photo {
+	public abstract pointcut handleCommand( Command c , String recordName , String musicName );
+	public abstract pointcut addCommand( String command , int type , int posi );
+public abstract aspect SmsReceiver {
+	public abstract pointcut getImageInfo();
+	public abstract pointcut addImageData( String imageName , IImageData imageData, String albumName );
+public abstract aspect SmsSender {
+	public abstract  pointcut constructingPhotoViewScreen(javax.microedition.lcdui.Canvas photoViewScreen);
+	abstract public pointcut postCommand(Command c);
+	public abstract pointcut showImage(String name);
+public abstract aspect ExceptionAdapter {
+	public abstract pointcut handleException(  );
+public abstract aspect ExceptionAdapter {
+	public abstract pointcut handleException(  );
